@@ -40,6 +40,7 @@ image_np_with_detections = image_np.copy()
 viz_utils.visualize_boxes_and_labels_on_image_array( image_np_with_detections, detections['detection_boxes'], detections['detection_classes'],
                                                     detections['detection_scores'], category_index,
                                                     use_normalized_coordinates=True, max_boxes_to_draw=100, min_score_thresh=.5,  agnostic_mode=False)
+print(detections['detection_classes'])
 print(image_np_with_detections)
 cv2.imwrite('final.jpg', image_np_with_detections)
 # %matplotlib inline
