@@ -33,7 +33,7 @@ input_tensor = input_tensor[tf.newaxis, ...]
 detections = detect_fn(input_tensor)
 num_detections = int(detections.pop('num_detections'))
 detections = {key:value[0,:num_detections].numpy() for key,value in detections.items()}
-print(detection)
+print(detections)
 detections['num_detections'] = num_detections
 detections['detection_classes'] = detections['detection_classes'].astype(np.int64)
 image_np_with_detections = image_np.copy()
